@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="1LOUJrsEukeP1vM6DYPFIw" DesignTimeRectangle="1714, 215, 182, 48" ElementType="Button" FriendlyName="'get_app License overview'" FullSelectorArgument="&lt;webctrl aaname='get_app License overview ' aria-role='menuitem' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='get_app License overview ' aria-role='menuitem' tag='BUTTON' type='' check:text='get_app License overview' /&gt;" IsNativeTextCaseSensitive="False" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="FuzzySelector, Image" Text="get_app License overview" TextMethod="AttributeText" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0YL7crzwYz0W20YE0jmoXVw</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="6096e2f0843c6da91085932ccf8e7b31.png" xmlns="">0cHC3_OCTjEmIWDfzaTU6FQ</imageRef>
+</TargetAnchorable>

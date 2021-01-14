@@ -1,0 +1,13 @@
+﻿{
+  "Id": "Ohp6OcQe4UeqNNeNlMIxWw",
+  "Reference": "iUdoW6O3RkGxDO-272PpdA/Ohp6OcQe4UeqNNeNlMIxWw",
+  "ParentRef": "iUdoW6O3RkGxDO-272PpdA/peF9TeRe_EyutNWfP4quUQ",
+  "Name": "get_app",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2021-01-12T16:31:19.4839095Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-01-12T16:31:19.4839095Z"
+}

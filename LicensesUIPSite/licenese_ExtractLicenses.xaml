@@ -1,0 +1,160 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="licenese_ExtractLicenses" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_saveLocation" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1176,2447</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>licenese_ExtractLicenses_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="42">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="licenese_ExtractLicenses" sap:VirtualizedContainerService.HintSize="476,2242" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="licenseURL" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Asking user for input&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_saveLocation]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.CurrentDirectory,"ExportLocation","LicenseOverview"+Now.ToString("MMddyyyymmss")+".xlsx")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Get URL" sap:VirtualizedContainerService.HintSize="434,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please enter the URL for the licensing site. Make sure you are logged into the license.uipath.com." Title="License Website URL">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[licenseURL]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Opening Org Licensing Site&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Extract the Excel Sheet from Licensing Site" sap:VirtualizedContainerService.HintSize="434,1379" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1163" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'get_app'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="ZWg05nvJ70uG7g9rDqlvOg" DesignTimeRectangle="1864, 175, 24, 24" ElementType="Icon" FriendlyName="'get_app'" FullSelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' type='' aaname='get_app' check:text='get_app' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACaSURBVEhL7dS9CYAwEIZhcQxXS+sqgiuJvb2FjYWllU6g8MlhCsUk3vlHkLxwneEhJiTCxwXw8XwGe2R5jfgwLSr9BacAbgogLwc4oSsaJEbEPqoY9HpzJzuc0ZV8VJWjXmeP8Ut5KAejmGfoRrkYJbg0ZlSCUQKQ2qNSjBKC1IqmFzDqAngvn0Dby3I27pfHJ/CdAvh4fweBBefQfuFldu0eAAAAAElFTkSuQmCC" InformativeScreenshot="851f6fbf7fecd22ca50dbf863611d5fe.png" IsNativeTextCaseSensitive="False" Reference="iUdoW6O3RkGxDO-272PpdA/Ohp6OcQe4UeqNNeNlMIxWw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="FuzzySelector, Image" Text="get_app" TextMethod="AttributeText" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NClick CursorMotionType="{x:Null}" ClickType="Single" DelayBefore="5" DisplayName="Click Download" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="ZWg05nvJ70uG7g9rDqlvOg" DesignTimeRectangle="1864, 175, 24, 24" ElementType="Icon" FriendlyName="'get_app'" FullSelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' type='' aaname='get_app' check:text='get_app' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACaSURBVEhL7dS9CYAwEIZhcQxXS+sqgiuJvb2FjYWllU6g8MlhCsUk3vlHkLxwneEhJiTCxwXw8XwGe2R5jfgwLSr9BacAbgogLwc4oSsaJEbEPqoY9HpzJzuc0ZV8VJWjXmeP8Ut5KAejmGfoRrkYJbg0ZlSCUQKQ2qNSjBKC1IqmFzDqAngvn0Dby3I27pfHJ/CdAvh4fweBBefQfuFldu0eAAAAAElFTkSuQmCC" InformativeScreenshot="851f6fbf7fecd22ca50dbf863611d5fe.png" IsNativeTextCaseSensitive="False" Reference="iUdoW6O3RkGxDO-272PpdA/Ohp6OcQe4UeqNNeNlMIxWw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="FuzzySelector, Image" Text="get_app" TextMethod="AttributeText" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick CursorMotionType="{x:Null}" ClickType="Single" DisplayName="Click Download License Overview" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="1LOUJrsEukeP1vM6DYPFIw" DesignTimeRectangle="1714, 215, 182, 48" ElementType="Button" FriendlyName="'get_app License overview'" FullSelectorArgument="&lt;webctrl aaname='get_app License overview ' aria-role='menuitem' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='get_app License overview ' aria-role='menuitem' tag='BUTTON' type='' check:text='get_app License overview' /&gt;" ImageBase64="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" InformativeScreenshot="6096e2f0843c6da91085932ccf8e7b31.png" IsNativeTextCaseSensitive="False" Reference="iUdoW6O3RkGxDO-272PpdA/9_BBcgnt2UCjKmIsRqIhIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="FuzzySelector, Image" Text="get_app License overview" TextMethod="AttributeText" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type the file location" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[out_saveLocation]">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="5kFt2JR_5Eim3Ey5QgKssg" DesignTimeRectangle="136, 418, 791, 17" ElementType="InputBox" FriendlyName="'license-overview_export…'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" ImageBase64="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" InformativeScreenshot="76dcb9bf79237c75f99be7175a64334c.png" IsNativeTextCaseSensitive="False" Reference="iUdoW6O3RkGxDO-272PpdA/V5sQgov-G02_ul3qlJ6snQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Text="license-overview_export_PepsiCo, Inc_1610469043889.xlsx" TextMethod="AttributeText">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="18, 415, 115, 23" ElementType="Text" FriendlyName="'File name:'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;ctrl name='Explorer Pane' role='pane' /&gt;&lt;ctrl name='Folder Layout Pane' role='pane' /&gt;&lt;ctrl name='Details Pane' role='pane' /&gt;&lt;ctrl name='File name:' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;ctrl name='Explorer Pane' role='pane' /&gt;&lt;ctrl name='Folder Layout Pane' role='pane' /&gt;&lt;ctrl name='Details Pane' role='pane' /&gt;&lt;ctrl name='File name:' role='text' automationid='' check:text='File name:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHcAAAAbCAYAAABGDxCrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFPSURBVGhD7ZWBccMgDEU7FtMwC7MwCpswiWJRZAtVjpNer3eRv3LvwAQE4RnylVIiEBPIDQzkBkQCcgPCwSXkBgRyAwO5gYHcwEBuYG4ot1AbP/uIXjOlXKlvn5qlj9Q/Fw4ubyb3ShzkfiiQG5gzcbrd9BlXtkSjsoxjZv96XPjjqp/fF/0/0Mo6phy5W0mU6zGTzuGugRP3Sln6GDi4vPV/Lm/quVxd39g2dNl0nVPEDZtPXoI97xYiZ74Be+4lx8kauA/kasxGue2qvpyYGfvp88Y6z1PcdzhzXOV4aQ0/4eAScpd2u7HeKdRciZHxmWp35ngrx+tArttu6+q6dLE51bO+Oockb46rZ647a8C1bLGb6LWbPvZafOta5tM6x/VG7Tcnl5+9NUDufYHcP+BZeP3/C5kfcgMCuYGB3MBAbmAgNzASkBsYyA1Logf74kRxA2awMwAAAABJRU5ErkJggg==" IsNativeTextCaseSensitive="False" SearchSteps="Selector, FuzzySelector, Image" Text="File name:" TextMethod="AttributeText" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick CursorMotionType="{x:Null}" ClickType="Single" DisplayName="Click Save" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="TtrnySyRD06lBRjJF7Tu3A" DesignTimeRectangle="747, 483, 88, 26" ElementType="Button" FriendlyName="'&amp;Save'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' check:text='&amp;amp;Save' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAeCAYAAAChf3k/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE/SURBVGhD7ZbBkYMwDEW3Jy7U4mZcCBe3klLcAR0oko3BgMlegpAn3zNvYkfK5Vl88jeOIwE9IFyZVfg8z+BGmsKnaQI38FH4MAzgi0C4MhCuDIQrA+HKQLgytoX7F23rRb7V0xl2hbtAsZbM5+CreqfYFS7THQO5Vq1j7AofPM+3OHen2j5pPH/nKETZVn31haWnpaxno8mwcCGLTJqacSKXEik43ovgJD/X8vHQIzUutC5RC+PCF5YJXaXvRrzIFLFlennfnO5lVRejTR/CGZcz4/AylSdgm17pkektn+m3u/7nsSvc87+SEgNLtCSJp2yu4kLOkeec2QRfvwuewPCEZ1HrWmNgy3VKcivhpXaMjGOsIFJ+B7PCr1artycw4cpAuDIQrgyEKwPhyvwrHHyfS+HgPk7CgQ4QrspIb+BM6qu/Af/cAAAAAElFTkSuQmCC" InformativeScreenshot="518c906c752d3d8e464bf4eb94d27a47.png" IsNativeTextCaseSensitive="False" Reference="iUdoW6O3RkGxDO-272PpdA/zZ4F1hXrr0utM3S1oqI8cQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Text="&amp;Save" TextMethod="AttributeText" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1056" BrowserType="Chrome" ContentHash="auYk2ys9Pk-HA-zi31Q7SQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVDhPndO5SgNRGIbhuG+gKCa4IFoKgo2XIATsbYRcRQhWNnZWtuIFiAtq49ZaqdhZpbBRBBEbN0QcJfi+MicgwXFi8TBzzj/zzZmzZKJ87goveK3TM+4NePAGB9hLaR+3iAzw60foRHOsJRbagc+0oRVbqISAw7izPWa/GtABa4NYxwIM30Q1wOF3YxUrCCE9WMMSJnCJDVj3+iOgF2c4QRes9aMM6/bNYAqNqBlBUoATN4JzOMIm1B0wBpfcof8rYBSJAU7iMS7QB2sO+xoumfe/BriMLs0y3lDEJBYRYR4DSAywcxyn8KUnvMNNNgT3wZ8jsD2MAkqYhfNgv/Myh2nULKNfcXNYcPfZn6nks15t+0Vroe22rm5lD9MddrGd0g5u8H2YPFX+6wc+U/JZ3sk9fgHgSd/8cNmxNgAAAABJRU5ErkJggg==" InformativeScreenshot="a1e0d2a7a33348e489587e3d761fab1b.png" Reference="iUdoW6O3RkGxDO-272PpdA/peF9TeRe_EyutNWfP4quUQ" Selector="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing'/&gt;" Url="[licenseURL]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;License Overview Downloaded&quot;]" />
+  </Sequence>
+</Activity>

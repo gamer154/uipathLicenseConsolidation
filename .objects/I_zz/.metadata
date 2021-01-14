@@ -1,0 +1,14 @@
+﻿{
+  "Id": "I_zzWUy3QU-z_xNwbp-zpg",
+  "Reference": "iUdoW6O3RkGxDO-272PpdA/I_zzWUy3QU-z_xNwbp-zpg",
+  "Name": "LicenseApp",
+  "Type": "App",
+  "Created": "2021-01-12T16:28:28.2627689Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-01-12T16:31:19.3479432Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

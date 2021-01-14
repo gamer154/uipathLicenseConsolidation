@@ -1,0 +1,11 @@
+﻿{
+  "Id": "eyZUio8wkE6I3r8YqBn-Fg",
+  "Reference": "iUdoW6O3RkGxDO-272PpdA/eyZUio8wkE6I3r8YqBn-Fg",
+  "Name": "TestApp1",
+  "Type": "App",
+  "Created": "2021-01-14T15:18:47.5925641Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=20.10.4.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2021-01-14T15:18:47.5925641Z"
+}

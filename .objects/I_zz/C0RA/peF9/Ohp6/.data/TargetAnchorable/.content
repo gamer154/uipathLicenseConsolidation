@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="ZWg05nvJ70uG7g9rDqlvOg" DesignTimeRectangle="1864, 175, 24, 24" ElementType="Icon" FriendlyName="'get_app'" FullSelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' type='' aaname='get_app' check:text='get_app' /&gt;" IsNativeTextCaseSensitive="False" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="FuzzySelector, Image" Text="get_app" TextMethod="AttributeText" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0iKkV6DyF2UCnKx1yBivUUQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="851f6fbf7fecd22ca50dbf863611d5fe.png" xmlns="">03vm2pLvwaUqpMksv2Nx5qg</imageRef>
+</TargetAnchorable>

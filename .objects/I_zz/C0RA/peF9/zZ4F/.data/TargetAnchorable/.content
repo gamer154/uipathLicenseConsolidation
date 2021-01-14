@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable ContentHash="TtrnySyRD06lBRjJF7Tu3A" DesignTimeRectangle="747, 483, 88, 26" ElementType="Button" FriendlyName="'&amp;Save'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' check:text='&amp;amp;Save' /&gt;" IsNativeTextCaseSensitive="False" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Text="&amp;Save" TextMethod="AttributeText" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0lZYXSya-iE6Dj6l1iLxzww</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="518c906c752d3d8e464bf4eb94d27a47.png" xmlns="">02PTf8bGU7UWke-g_1oVSWg</imageRef>
+</TargetAnchorable>

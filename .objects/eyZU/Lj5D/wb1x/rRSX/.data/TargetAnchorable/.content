@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable ContentHash="eoQMAuCBJ0uBy-f8-EB2YA" DesignTimeRectangle="1231, 163, 72, 48" FriendlyName="'mstsc.exe 35.223.170.238'" IsNativeTextCaseSensitive="False" ScopeSelectorArgument="&lt;wnd app='mstsc.exe' cls='TscShellContainerClass' title='35.223.170.238 - Remote Desktop Connection' /&gt;" SearchSteps="Image" TargetType="ImageBased" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TargetAnchorable.Anchors>
+    <scg:List x:TypeArguments="ITarget" Capacity="4">
+      <Target DesignTimeRectangle="1123, 172, 95, 33" FriendlyName="'mstsc.exe 35.223.170.238'" IsNativeTextCaseSensitive="False" SearchSteps="Image" TargetType="ImageBased">
+        <imageRef attrName="ImageBase64" xmlns="">1NQTgxVG3akalYbXy6M3MwA</imageRef>
+      </Target>
+    </scg:List>
+  </TargetAnchorable.Anchors>
+  <imageRef attrName="ImageBase64" xmlns="">0VM4vFl2wUEuQGphtDChK-w</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="4ede110bd3c1d69c79df3ece8460ab81.png" xmlns="">0A03hUnKtDEqj8tM-_Mf8uQ</imageRef>
+</TargetAnchorable>
