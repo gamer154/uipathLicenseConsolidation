@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="LMMRo9KzFEuq0E7Dh4eMPA" DesignTimeRectangle="214, 167, 133, 40" ElementType="Text" FriendlyName="'PepsiCo, Inc'" FullSelectorArgument="&lt;webctrl parentid='organization-details-sfdcName' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='organization-details-sfdcName' tag='A' type='' aaname='PepsiCo, Inc' check:text='PepsiCo, Inc' /&gt;" IsNativeTextCaseSensitive="False" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="Selector" Text="PepsiCo, Inc" TextMethod="AttributeText" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="ImageBase64" xmlns="">0RC9y1vNoFESoyhj09c6EfQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="8b61e18e55baab4321e94e55e889a6d6.png" xmlns="">0q5UoQek4Hke0hVX85vnFcg</imageRef>
+</TargetAnchorable>

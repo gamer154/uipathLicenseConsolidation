@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<TargetApp Area="-1928, -8, 1936, 1056" BrowserType="Chrome" ContentHash="uFZ3cHQOMkGLRNvuanCHNg" Reference="iUdoW6O3RkGxDO-272PpdA/peF9TeRe_EyutNWfP4quUQ" Selector="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing'/&gt;" Url="[licenseURL]" xmlns="http://schemas.uipath.com/workflow/activities/uix">
-  <imageRef attrName="IconBase64" xmlns="">0h0iLF1Hl-kCEW8eV6jx6fQ</imageRef>
-  <imageRef attrName="InformativeScreenshot" originalValue="a1e0d2a7a33348e489587e3d761fab1b.png" xmlns="">0Ot19wlxTtEe77vK6I84eDw</imageRef>
+<TargetApp Area="-1928, -8, 1936, 1056" BrowserType="Chrome" ContentHash="hDol3kDkHEyP8iBD2vL_CQ" Reference="iUdoW6O3RkGxDO-272PpdA/peF9TeRe_EyutNWfP4quUQ" Selector="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing'/&gt;" Url="[licenseURL]" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">0uSRZQWY5U06bpmLVMjEvbQ</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="a1e0d2a7a33348e489587e3d761fab1b.png" xmlns="">0tPRkbvS5UUWrsahjsEjeIA</imageRef>
 </TargetApp>
