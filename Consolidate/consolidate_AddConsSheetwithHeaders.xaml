@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="excel_AddConsSheetwithHeaders" this:excel_AddConsSheetwithHeaders.in_saveLocation="C:\Users\shoaibali\Documents\UiPath\Internal\LicenseConsolidation\ExportLocation\tstlicense1.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="excel_AddConsSheetwithHeaders" this:excel_AddConsSheetwithHeaders.in_saveLocation="C:\Users\shoaibali\Documents\UiPath\Internal\LicenseConsolidation\ExportLocation\tstlicense1.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_saveLocation" Type="InArgument(x:String)" />
     <x:Property Name="out_Workbook" Type="OutArgument(ui:WorkbookApplication)" />
@@ -6,10 +6,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1118,1240</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1118,895</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>excel_AddConsSheetwithHeaders_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="28">
+    <scg:List x:TypeArguments="x:String" Capacity="56">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -38,10 +38,11 @@
       <x:String>UiPath.Excel</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,85 +63,150 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="excel_AddConsSheetwithHeaders" sap:VirtualizedContainerService.HintSize="476,1035" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: Adds the main headers to calculate the licenses." DisplayName="consolidate_AddConsSheetwithHeaders" sap:VirtualizedContainerService.HintSize="476,690" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,943" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[out_Workbook]" WorkbookPath="[in_saveLocation]">
-      <ui:ExcelApplicationScope.Body>
-        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="377,834" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="sd:DataTable" Name="DT1" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelCopySheet DestinationFilePath="{x:Null}" DestinationSheetName="Consolidated" DisplayName="Copy Licenses Sheet to Consolidated" sap:VirtualizedContainerService.HintSize="335,22" sap2010:WorkflowViewState.IdRef="ExcelCopySheet_1" SheetName="Licenses" />
-            <ui:ExcelInsertDeleteColumns DisplayName="Delete  End User to Value Rows" sap:VirtualizedContainerService.HintSize="335,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteColumns_1" Mode="Remove" NoColumns="5" Position="9" SheetName="Consolidated" />
-            <ui:ExcelRemoveDuplicatesRange DisplayName="Remove Duplicates Range" sap:VirtualizedContainerService.HintSize="335,59" sap2010:WorkflowViewState.IdRef="ExcelRemoveDuplicatesRange_1" Range="A2:H1000" SheetName="Consolidated" />
-            <ui:ExcelInsertDeleteColumns DisplayName="Insert Rows for Action and Usage" sap:VirtualizedContainerService.HintSize="335,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteColumns_2" Mode="Add" NoColumns="2" Position="7" SheetName="Consolidated" />
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke consolidate_AddHeaders workflow" sap:VirtualizedContainerService.HintSize="335,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Consolidate\consolidate_AddHeaders.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_savelLocation" />
-                <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_Workbook">
-                  <mva:VisualBasicValue x:TypeArguments="ui:WorkbookApplication" ExpressionText="out_Workbook" />
-                </InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <ui:ExcelWriteCell Cell="G1" DisplayName="Write Header for Action" sap:VirtualizedContainerService.HintSize="335,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Consolidated" Text="Action" />
-            <ui:ExcelWriteCell Cell="H1" DisplayName="Write Header for Usage" sap:VirtualizedContainerService.HintSize="335,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Consolidated" Text="Usage" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="335,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,567" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="excel_AddConsSheetwithHeaders" sap:VirtualizedContainerService.HintSize="476,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Sheet consolidation and license calculation started.&quot;]" />
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,1205" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[out_Workbook]" WorkbookPath="[in_saveLocation]">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="377,1096" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="DT1" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Add New Rows" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="335,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Copying the license sheet.&quot;]" />
+                  <ui:ExcelCopySheet DestinationFilePath="{x:Null}" DestinationSheetName="Consolidated" DisplayName="Copy Licenses Sheet to Consolidated" sap:VirtualizedContainerService.HintSize="335,22" sap2010:WorkflowViewState.IdRef="ExcelCopySheet_1" SheetName="Licenses" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="335,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Delete and insert rows/columns&quot;]" />
+                  <ui:ExcelInsertDeleteColumns DisplayName="Delete  End User to Value Rows" sap:VirtualizedContainerService.HintSize="335,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteColumns_1" Mode="Remove" NoColumns="5" Position="9" SheetName="Consolidated" />
+                  <ui:ExcelRemoveDuplicatesRange DisplayName="Remove Duplicates Range" sap:VirtualizedContainerService.HintSize="335,59" sap2010:WorkflowViewState.IdRef="ExcelRemoveDuplicatesRange_1" Range="A2:H1000" SheetName="Consolidated" />
+                  <ui:ExcelInsertDeleteColumns DisplayName="Insert Rows for Action and Usage" sap:VirtualizedContainerService.HintSize="335,22" sap2010:WorkflowViewState.IdRef="ExcelInsertDeleteColumns_2" Mode="Add" NoColumns="2" Position="7" SheetName="Consolidated" />
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke consolidate_AddHeaders workflow" sap:VirtualizedContainerService.HintSize="335,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Consolidate\consolidate_AddHeaders.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_savelLocation" />
+                      <InArgument x:TypeArguments="ui:WorkbookApplication" x:Key="in_Workbook">[out_Workbook]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:ExcelWriteCell Cell="G1" DisplayName="Write Header for Action" sap:VirtualizedContainerService.HintSize="335,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Consolidated" Text="Action" />
+                  <ui:ExcelWriteCell Cell="H1" DisplayName="Write Header for Usage" sap:VirtualizedContainerService.HintSize="335,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Consolidated" Text="Usage" />
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="335,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="418,158" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="Add New Rows" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:ExcelWriteCell Cell="K1" DisplayName="Write Header for Orchestrator" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Consolidated" Text="Orchestrator" />
+                          <ui:ExcelWriteCell Cell="L1" DisplayName="Write Header for Attended Robot Named" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Consolidated" Text="Attended Robot Named User" />
+                          <ui:ExcelWriteCell Cell="M1" DisplayName="Write Header for Attended Robot Concurrent" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Consolidated" Text="Attended Robot Concurrent User" />
+                          <ui:ExcelWriteCell Cell="N1" DisplayName="Write Header for Studio Named" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Consolidated" Text="Studio Named User" />
+                          <ui:ExcelWriteCell Cell="O1" DisplayName="Write Header for Studio Concurrent" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Consolidated" Text="Studio Concurrent User / NL" />
+                          <ui:ExcelWriteCell Cell="P1" DisplayName="Write Header for StudioX Named" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Consolidated" Text="StudioX Named User" />
+                          <ui:ExcelWriteCell Cell="Q1" DisplayName="Write Header for StudioX Concurrent" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Consolidated" Text="StudioX Concurrent User" />
+                          <ui:ExcelWriteCell Cell="R1" DisplayName="Write Header for Insights" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Consolidated" Text="Insights" />
+                          <ui:ExcelWriteCell Cell="S1" DisplayName="Write Header for ProcessMining Dev User" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Consolidated" Text="ProcessMining Developer User" />
+                          <ui:ExcelWriteCell Cell="T1" DisplayName="Write Header for ProcessMining Process" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Consolidated" Text="ProcessMining Process" />
+                          <ui:ExcelWriteCell Cell="U1" DisplayName="Write Header for ProcessMining Active" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Consolidated" Text="ProcessMining Active" />
+                          <ui:ExcelWriteCell Cell="V1" DisplayName="Write Header for ProcessMining User" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Consolidated" Text="ProcessMining User" />
+                          <ui:ExcelWriteCell Cell="W1" DisplayName="Write Header for NonProduction Robot" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="Consolidated" Text="NonProduction Robot" />
+                          <ui:ExcelWriteCell Cell="X1" DisplayName="Write Header for Unattended Robot" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="Consolidated" Text="Unattended Robot" />
+                        </Sequence>
+                      </Sequence>
+                    </ui:CommentOut.Body>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelWriteCell Cell="K1" DisplayName="Write Header for Orchestrator" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Consolidated" Text="Orchestrator" />
-                    <ui:ExcelWriteCell Cell="L1" DisplayName="Write Header for Attended Robot Named" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Consolidated" Text="Attended Robot Named User" />
-                    <ui:ExcelWriteCell Cell="M1" DisplayName="Write Header for Attended Robot Concurrent" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Consolidated" Text="Attended Robot Concurrent User" />
-                    <ui:ExcelWriteCell Cell="N1" DisplayName="Write Header for Studio Named" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Consolidated" Text="Studio Named User" />
-                    <ui:ExcelWriteCell Cell="O1" DisplayName="Write Header for Studio Concurrent" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Consolidated" Text="Studio Concurrent User / NL" />
-                    <ui:ExcelWriteCell Cell="P1" DisplayName="Write Header for StudioX Named" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Consolidated" Text="StudioX Named User" />
-                    <ui:ExcelWriteCell Cell="Q1" DisplayName="Write Header for StudioX Concurrent" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Consolidated" Text="StudioX Concurrent User" />
-                    <ui:ExcelWriteCell Cell="R1" DisplayName="Write Header for Insights" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Consolidated" Text="Insights" />
-                    <ui:ExcelWriteCell Cell="S1" DisplayName="Write Header for ProcessMining Dev User" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Consolidated" Text="ProcessMining Developer User" />
-                    <ui:ExcelWriteCell Cell="T1" DisplayName="Write Header for ProcessMining Process" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Consolidated" Text="ProcessMining Process" />
-                    <ui:ExcelWriteCell Cell="U1" DisplayName="Write Header for ProcessMining Active" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Consolidated" Text="ProcessMining Active" />
-                    <ui:ExcelWriteCell Cell="V1" DisplayName="Write Header for ProcessMining User" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Consolidated" Text="ProcessMining User" />
-                    <ui:ExcelWriteCell Cell="W1" DisplayName="Write Header for NonProduction Robot" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_15" SheetName="Consolidated" Text="NonProduction Robot" />
-                    <ui:ExcelWriteCell Cell="X1" DisplayName="Write Header for Unattended Robot" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="Consolidated" Text="Unattended Robot" />
-                  </Sequence>
+                  </ui:CommentOut>
                 </Sequence>
-              </ui:CommentOut.Body>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,405" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,336" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
-          </Sequence>
-        </ActivityAction>
-      </ui:ExcelApplicationScope.Body>
-    </ui:ExcelApplicationScope>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error in intial fixing of excel: &quot;+exception.ToString]" />
+              <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[exception]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>
