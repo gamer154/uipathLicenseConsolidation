@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1118,906</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1118,3792</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>licenese_ExtractLicenses_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="60">
+    <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -44,7 +44,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="58">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -77,14 +77,14 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: This workflow extracts and downloads the license overview file from the licensing portal." DisplayName="license_ExtractLicenses" sap:VirtualizedContainerService.HintSize="476,701" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="Description: This workflow extracts and downloads the license overview file from the licensing portal." DisplayName="license_ExtractLicenses" sap:VirtualizedContainerService.HintSize="682,3627" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,567" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="640,3504" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -92,43 +92,67 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="licenese_ExtractLicenses" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="licenese_ExtractLicenses" sap:VirtualizedContainerService.HintSize="602,3277" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="licenseURL" />
             <Variable x:TypeArguments="x:String" Name="orgName" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Asking user for input&quot;]" />
-          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Get URL" sap:VirtualizedContainerService.HintSize="434,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please enter the URL for the licensing site. Make sure you are logged into the license.uipath.com and UiPath Chrome Extension is available." Title="License Website URL">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="560,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Asking user for input&quot;]" />
+          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Get URL" sap:VirtualizedContainerService.HintSize="560,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please enter the URL for the licensing site. Make sure you are logged into the license.uipath.com and UiPath Chrome Extension is available. Also, please have Ask where to save each file before downloading, turned on Chrome." Title="License Website URL">
             <ui:InputDialog.Result>
               <OutArgument x:TypeArguments="x:String">[licenseURL]</OutArgument>
             </ui:InputDialog.Result>
           </ui:InputDialog>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Opening Org Licensing Site&quot;]" />
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Extract the Excel Sheet from Licensing Site" sap:VirtualizedContainerService.HintSize="434,1633" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="560,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Opening Org Licensing Site&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Extract the Excel Sheet from Licensing Site" sap:VirtualizedContainerService.HintSize="560,2514" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="393,1417" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,2298" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="pathExists" />
+                    <Variable x:TypeArguments="x:String" Name="pathSelected" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke license_ExtractOrgName workflow" sap:VirtualizedContainerService.HintSize="351,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LicensesUIPSite\license_ExtractOrgName.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke license_ExtractOrgName workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LicensesUIPSite\license_ExtractOrgName.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:String" x:Key="out_orgName">[orgName]</OutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_licenseURL">[licenseURL]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <Assign sap:VirtualizedContainerService.HintSize="351,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484,306" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch.Try>
+                      <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Path.Combine(Environment.CurrentDirectory,&quot;ExportLocation&quot;)]" />
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[out_saveLocation]</OutArgument>
                     </Assign.To>
@@ -136,7 +160,28 @@
                       <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.CurrentDirectory,"ExportLocation",orgName+Now.ToString("MMddyyyymmss")+".xlsx")]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'get_app'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="351,186" sap2010:WorkflowViewState.IdRef="NCheckState_1">
+                  <ui:PathExists DisplayName="Path Exists" Exists="[pathExists]" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.CurrentDirectory,&quot;ExportLocation&quot;)]" PathType="Folder" />
+                  <If Condition="[pathExists]" sap:VirtualizedContainerService.HintSize="484,366" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="304,217" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SelectFolder DisplayName="Select Folder" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="SelectFolder_1" SelectedFolder="[pathSelected]" />
+                        <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_saveLocation]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[pathSelected+orgName+Now.ToString("MMddyyyymmss")+".xlsx"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'get_app'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="484,186" sap2010:WorkflowViewState.IdRef="NCheckState_1">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
@@ -159,12 +204,12 @@
                       <uix:TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="ZWg05nvJ70uG7g9rDqlvOg" DesignTimeRectangle="1864, 175, 24, 24" ElementType="Icon" FriendlyName="'get_app'" FullSelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' type='' aaname='get_app' check:text='get_app' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACaSURBVEhL7dS9CYAwEIZhcQxXS+sqgiuJvb2FjYWllU6g8MlhCsUk3vlHkLxwneEhJiTCxwXw8XwGe2R5jfgwLSr9BacAbgogLwc4oSsaJEbEPqoY9HpzJzuc0ZV8VJWjXmeP8Ut5KAejmGfoRrkYJbg0ZlSCUQKQ2qNSjBKC1IqmFzDqAngvn0Dby3I27pfHJ/CdAvh4fweBBefQfuFldu0eAAAAAElFTkSuQmCC" InformativeScreenshot="851f6fbf7fecd22ca50dbf863611d5fe.png" IsNativeTextCaseSensitive="False" Reference="iUdoW6O3RkGxDO-272PpdA/Ohp6OcQe4UeqNNeNlMIxWw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="FuzzySelector, Image" Text="get_app" TextMethod="AttributeText" />
                     </uix:NCheckState.Target>
                   </uix:NCheckState>
-                  <uix:NClick CursorMotionType="{x:Null}" ClickType="Single" DelayBefore="5" DisplayName="Click Download" sap:VirtualizedContainerService.HintSize="351,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick CursorMotionType="{x:Null}" ClickType="Single" DelayBefore="5" DisplayName="Click Download" sap:VirtualizedContainerService.HintSize="484,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="ZWg05nvJ70uG7g9rDqlvOg" DesignTimeRectangle="1864, 175, 24, 24" ElementType="Icon" FriendlyName="'get_app'" FullSelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='get-reports-button' tag='MAT-ICON' type='' aaname='get_app' check:text='get_app' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACaSURBVEhL7dS9CYAwEIZhcQxXS+sqgiuJvb2FjYWllU6g8MlhCsUk3vlHkLxwneEhJiTCxwXw8XwGe2R5jfgwLSr9BacAbgogLwc4oSsaJEbEPqoY9HpzJzuc0ZV8VJWjXmeP8Ut5KAejmGfoRrkYJbg0ZlSCUQKQ2qNSjBKC1IqmFzDqAngvn0Dby3I27pfHJ/CdAvh4fweBBefQfuFldu0eAAAAAElFTkSuQmCC" InformativeScreenshot="851f6fbf7fecd22ca50dbf863611d5fe.png" IsNativeTextCaseSensitive="False" Reference="iUdoW6O3RkGxDO-272PpdA/Ohp6OcQe4UeqNNeNlMIxWw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="FuzzySelector, Image" Text="get_app" TextMethod="AttributeText" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick CursorMotionType="{x:Null}" ClickType="Single" DisplayName="Click Download License Overview" sap:VirtualizedContainerService.HintSize="351,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick CursorMotionType="{x:Null}" ClickType="Single" DisplayName="Click Download License Overview" sap:VirtualizedContainerService.HintSize="484,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://license.uipath.com/organizations/342" ContentHash="1LOUJrsEukeP1vM6DYPFIw" DesignTimeRectangle="1714, 215, 182, 48" ElementType="Button" FriendlyName="'get_app License overview'" FullSelectorArgument="&lt;webctrl aaname='get_app License overview ' aria-role='menuitem' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='get_app License overview ' aria-role='menuitem' tag='BUTTON' type='' check:text='get_app License overview' /&gt;" ImageBase64="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" InformativeScreenshot="6096e2f0843c6da91085932ccf8e7b31.png" IsNativeTextCaseSensitive="False" Reference="iUdoW6O3RkGxDO-272PpdA/9_BBcgnt2UCjKmIsRqIhIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Organization Details | UiPath Licensing' /&gt;" SearchSteps="FuzzySelector, Image" Text="get_app License overview" TextMethod="AttributeText" />
                     </uix:NClick.Target>
@@ -196,10 +241,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,405" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="606,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -207,7 +252,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,336" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence sap:VirtualizedContainerService.HintSize="478,437" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
