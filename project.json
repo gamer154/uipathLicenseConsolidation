@@ -7,6 +7,7 @@
     "UiPath.Excel.Activities": "[2.10.0-preview]",
     "UiPath.Mail.Activities": "[1.10.0-preview]",
     "UiPath.System.Activities": "[20.10.3]",
+    "UiPath.Testing.Activities": "[1.2.4]",
     "UiPath.UIAutomation.Activities": "[20.12.0-preview]"
   },
   "webServices": [],
@@ -37,7 +38,18 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "d4089763-55d9-41d1-846e-b43f38297792",
+        "fileName": "Tests\\TestCase1.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "a3acd14f-5989-4a1a-b0f7-c469ef8f366f",
+        "fileName": "MainTestCase1.xaml"
+      }
+    ],
     "modernBehavior": true
   },
   "expressionLanguage": "VisualBasic",
